@@ -23,7 +23,7 @@ function App() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer ${REACT_APP_API_KEY}`,
       },
       body: JSON.stringify(data),
     })
