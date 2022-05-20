@@ -19,9 +19,10 @@ const responseObject = {
 };
 ```
 **Project File Structure**\
-
+```
 ├── public                # Public files (HTML)
 ├── src                   # source files (contains index.js, app.js, styling and components)
 ├── package-lock.json
 ├── package.json
 └── README.md
+```
