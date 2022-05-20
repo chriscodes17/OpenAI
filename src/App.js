@@ -50,6 +50,11 @@ function App() {
         setIsLoading(false);
       });
   };
+  const deleteResponse = (responseId) => {
+    setResponseData((prevData) => {
+      return prevData.filter((prevRes) => prevRes.id !== responseId);
+    });
+  };
   useEffect(() => {
     localStorage.setItem("responseData", JSON.stringify(responseData));
   }, [responseData]);
@@ -57,7 +62,11 @@ function App() {
     <div className="app-container">
       <h1>I am OpenAI, ask me anything!</h1>
       <Form isLoading={isLoading} fetch={handleFetch} />
-      <Responses isLoading={isLoading} responseData={responseData} />
+      <Responses
+        deleteResponse={deleteResponse}
+        isLoading={isLoading}
+        responseData={responseData}
+      />
     </div>
   );
 }
